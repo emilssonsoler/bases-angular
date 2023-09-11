@@ -9,13 +9,14 @@ import { Character } from '../../interfaces/character.interface';
 export class ListComponent {
 
   @Input()
-  public characterList: Character[] = [{name:'trunks', powerLevel: 9000}];
+  public characterList: Character[] = [{ name: 'trunks', powerLevel: 9000 }];
 
   @Output()
-  public OnDeleteCharacter : EventEmitter <number> = new EventEmitter();
+  public OnDeleteCharacter: EventEmitter<string> = new EventEmitter();
 
-  emitDeleteChacarcter(index: number):void{
-     this.OnDeleteCharacter.emit(index);
+  emitDeleteChacarcter(id?: string): void {
+    if (!id) return;
+    this.OnDeleteCharacter.emit(id);
 
   }
 }
