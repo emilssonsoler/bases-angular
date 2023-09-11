@@ -12,9 +12,9 @@ export class DbzService {
     {id: uuid(), name: 'Goku', powerLevel: 10000}
   ];
 
-  onNewCharacter(char: Character):void {
+  newCharacter(character: Character):void {
 
-    const newCharacter = {id: uuid(), ...char}
+    const newCharacter = {id: uuid(), ...character}
     this.characters.push(newCharacter);
     // console.log('mainpage: ',char);
 
